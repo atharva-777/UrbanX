@@ -14,31 +14,23 @@ export const LoginForm = () => {
   const [error, setError] = useState("");
 
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/profile";
 
   const onSubmit = async () => {
     // e.preventDefault();
     console.log("Request handling ", formValues);
     try {
       setLoading(true);
-      setFormValues({ email: "", password: "" });
       const res = await signIn("Credentials", {
         redirect: false,
         email: formValues.email,
         password: formValues.password,
       });
-
+      
+      setFormValues({ email: "", password: "" });
       setLoading(false);
 
-      console.log(res);
-      if (res) {
-        console.log("result ", res);
-      }
-      if (!res?.error) {
-        router.push(callbackUrl);
-      } else {
-        setError("invalid email or password");
-      }
+      console.log("output ",res);
+      
     } catch (error: any) {
       setLoading(false);
       setError(error);

@@ -34,16 +34,16 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({token,account,profile}) {
-        if(account && account.type==='credentials'){
-          token.userId = account.providerAccountId;
-        }
-        return token;
-    },
-    async session({session,token,user}) {
-        session.user.id = token.userId;
-        return session;
-    },
+    // async jwt({token,account,profile}) {
+    //     if(account && account.type==='credentials'){
+    //       token.userId = account.providerAccountId;
+    //     }
+    //     return token;
+    // },
+    // async session({session,token,user}) {
+    //     session.user.id = token.userId;
+    //     return session;
+    // },
   },
   pages: {
     signIn: "/login",
