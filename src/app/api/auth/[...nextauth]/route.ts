@@ -15,9 +15,7 @@ const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log("next auth req", credentials);
         const user = { id: "42", email: "new@gmail.com", password: "new@123" };
-        console.log("credntials",credentials)
         JSON.stringify(credentials)
         if (
           credentials?.email === user.email &&
@@ -46,7 +44,7 @@ const authOptions: NextAuthOptions = {
     // },
   },
   pages: {
-    signIn: "/login",
+    // signIn: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET || "dsbfnfmsb346lm5",
   debug: false,
