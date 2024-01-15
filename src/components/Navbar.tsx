@@ -16,52 +16,72 @@ import {
 const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            {/* <NavigationMenuLink>Link</NavigationMenuLink> */}
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <li>Electronics</li>
-              <li>Smartphones</li>
-              <li>Grocery</li>
-              <li>Books</li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+    <div className="m-2">
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+              Products
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              {/* <NavigationMenuLink>Link</NavigationMenuLink> */}
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <li>Electronics</li>
+                <li>Smartphones</li>
+                <li>Grocery</li>
+                <li>Books</li>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Profile</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <li>Your Account</li>
-              <li>Your Orders</li>
-              <li>Your Wishlist</li>
-              <li>
-                <button onClick={() => signOut()}>Logout</button>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+              Profile
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <li>Your Account</li>
+                <li>Your Orders</li>
+                <li>Your Wishlist</li>
+                <li>
+                  <button onClick={() => signOut()}>Logout</button>
+                </li>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <Link href={"/"} legacyBehavior passHref>
-            <NavigationMenuLink>Customer Service</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+              History
+            </NavigationMenuTrigger>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>History</NavigationMenuTrigger>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href={"/"} legacyBehavior passHref>
+              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                Offer Zone
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <Link href={"/api/auth/signin"} legacyBehavior passHref>
-            <NavigationMenuLink>Login</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <NavigationMenuItem>
+            <Link href={"/"} legacyBehavior passHref>
+              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                Customer Service
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <Link href={"/api/auth/signin"} legacyBehavior passHref>
+              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                Login
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
 };
 
