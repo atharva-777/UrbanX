@@ -3,6 +3,7 @@ import Link from "next/link";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import MyCarousel from "@/components/Carousel";
+import conn from "@/lib/db";
 
 const UserData = async () => {
   const session = await getServerSession(authOptions);
@@ -12,6 +13,13 @@ const UserData = async () => {
 }
 
 export default function Home() {
+
+  if(conn){
+    console.log("Connected to database", process.env.PGSQL_DATABASE);
+  }else{
+    console.log("No connection")
+  }
+
   return (
     <main>
       <MyCarousel/>
