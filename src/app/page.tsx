@@ -14,12 +14,6 @@ const UserData = async () => {
 
 export default function Home() {
 
-  if(conn){
-    console.log("Connected to database", process.env.PGSQL_DATABASE);
-  }else{
-    console.log("No connection")
-  }
-
   return (
     <main>
       <MyCarousel/>
