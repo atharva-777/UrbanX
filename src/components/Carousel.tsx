@@ -19,13 +19,13 @@ const MyCarousel = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-between m-4">
         <Carousel setApi={setApi} className="w-full max-w-xs">
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index}>
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <CardContent className="flex aspect-square items-center justify-center p-4">
                     <span className="text-4xl font-semibold">{index + 1}</span>
                   </CardContent>
                 </Card>

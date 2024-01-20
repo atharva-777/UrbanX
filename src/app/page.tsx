@@ -16,6 +16,9 @@ export default function Home() {
 
   return (
     <main>
+      <div className="text-center justify-center m-2 p-4 bg-blue-300 rounded">
+        Exciting offers & special exclusive discounts available for you!!
+      </div>
       <MyCarousel/>
       <div className="space-x-8 space-y-8 m-4">
         <button className="p-2 bg-blue-300 rounded">
