@@ -16,11 +16,11 @@ import {
 const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <div className="m-2">
+    <div className="p-2">
       <NavigationMenu>
-        <NavigationMenuList>
+        <NavigationMenuList className="container mx-auto flex justify-between items-center">
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md space-x-6 p-4">
               Products
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md space-x-6 p-4">
               Profile
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -51,14 +51,14 @@ const Navbar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-lg space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md space-x-6 p-4">
               History
             </NavigationMenuTrigger>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <Link href={"/"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                 Offer Zone
               </NavigationMenuLink>
             </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
           <NavigationMenuItem>
             <Link href={"/"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                 Customer Service
               </NavigationMenuLink>
             </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
           <NavigationMenuItem>
             <Link href={"/api/auth/signin"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                 Login
               </NavigationMenuLink>
             </Link>
