@@ -16,11 +16,12 @@ import {
 const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <div className="p-2">
+    <div className="p-4 bg-gray-800 text-white">
       <NavigationMenu>
         <NavigationMenuList className="container mx-auto flex justify-between items-center">
+      <div className="text-3xl font-serif mr-2 left-0 hover:text-slate-500 transition-all duration-300 ease-in-out hover:cursor-pointer">UrbanX</div>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md text-black space-x-6 p-4">
               Products
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -35,7 +36,7 @@ const Navbar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md text-black space-x-6 p-4">
               Profile
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -51,14 +52,14 @@ const Navbar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md space-x-6 p-4">
+            <NavigationMenuTrigger className="text-md text-black space-x-6 p-4">
               History
             </NavigationMenuTrigger>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
             <Link href={"/"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
+              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
                 Offer Zone
               </NavigationMenuLink>
             </Link>
@@ -66,16 +67,47 @@ const Navbar = () => {
 
           <NavigationMenuItem>
             <Link href={"/"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
+              <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
                 Customer Service
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <Link href={"/api/auth/signin"} legacyBehavior passHref>
-              <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
-                Login
+          <div>
+            <textarea
+              name="Search Products"
+              id=""
+              placeholder="Seach UrbanX"
+              className="rounded border border-zinc-950 p-2"
+              cols={40}
+              rows={1}
+            ></textarea>
+          </div>
+
+          {session?.user && (
+            <NavigationMenuItem>
+              <Link href={"/"} legacyBehavior passHref>
+                <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                  User
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          )}
+
+          {!session?.user && (
+            <NavigationMenuItem>
+              <Link href={"/api/auth/signin"} legacyBehavior passHref>
+                <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                  Login
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          )}
+
+          <NavigationMenuItem className="right-0 ml-auto">
+            <Link href={"/cart"} legacyBehavior passHref>
+              <NavigationMenuLink className="text-lg space-x-6 p-4 right-0 font-medium">
+                Cart
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

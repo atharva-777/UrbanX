@@ -5,15 +5,14 @@ import { getServerSession } from "next-auth";
 import MyCarousel from "@/components/Carousel";
 import conn from "@/lib/db";
 import Category from "@/components/Category";
+import Offer from "@/components/Offer";
 
 export default function Home() {
   return (
     <main>
-      <div className="flex text-center justify-center m-2 p-4 bg-blue-300 rounded">
-        Exciting offers & special exclusive discounts available for you!!
-      </div>
+      <Offer/>
       <MyCarousel />
-      <Category/>
+      <Category />
     </main>
   );
 }
