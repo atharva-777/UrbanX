@@ -27,6 +27,12 @@ const dealsData = [
     discount: "70",
     product: "I phone 15",
   },
+  {
+    image:
+      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942578/UrbanX/daniel-korpai-hbTKIbuMmBI-unsplash_kmeavo.jpg",
+    discount: "70",
+    product: "I phone 15",
+  },
 ];
 
 const Category = () => {
@@ -50,7 +56,7 @@ const Category = () => {
           </span>
         </h3>
       </div>
-      <div className="grid grid-cols-4 w-full max-w-full space-x-4 space-y-8">
+      <div className="grid grid-cols-5 w-full max-w-full space-x-4 space-y-8">
         {dealsData.map((deal, ind) => {
           return (
             <Card key={ind}>
