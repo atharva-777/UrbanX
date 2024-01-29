@@ -14,21 +14,20 @@ import {
 } from "@/components/ui/navigation-menu";
 import React, { useState } from "react";
 import SideBar from "./SideBar";
+import { FaAlignJustify } from "react-icons/fa";
 
 const HamburgerMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
     <>
-      <div>
-        <button className="relative group" onClick={onClick}>
-          <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md">
-            <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 group-focus:-rotate-[45deg] origin-center">
-              <div className="bg-white h-[2px] w-1/2 rounded transform transition-all duration-300 group-focus:-rotate-90 group-focus:h-[1px] origin-right delay-75 group-focus:-translate-y-[1px]"></div>
-              <div className="bg-white h-[1px] rounded"></div>
-              <div className="bg-white h-[2px] w-1/2 rounded self-end transform transition-all duration-300 group-focus:-rotate-90 group-focus:h-[1px] origin-left delay-75 group-focus:translate-y-[1px]"></div>
-            </div>
+      <button className="relative group" onClick={onClick}>
+        <div className ="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md">
+          <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300  origin-center">
+            <div className="bg-white h-[2px] w-1/2 rounded transform transition-all duration-300 group-focus:-rotate-90 group-focus:h-[1px] origin-right delay-75 group-focus:-translate-y-[1px]"></div>
+            <div className="bg-white h-[1px] rounded"></div>
+            <div className="bg-white h-[2px] w-1/2 rounded self-end transform transition-all duration-300 group-focus:-rotate-90 group-focus:h-[1px] origin-left delay-75 group-focus:translate-y-[1px]"></div>
           </div>
-        </button>
-      </div>
+        </div>
+      </button>
     </>
   );
 };
@@ -42,14 +41,19 @@ const Navbar = () => {
   return (
     <div>
       {/* first navbar row */}
-      <div className="p-4 bg-gray-800 text-white">
+      <div className="p-2 bg-gray-800 text-white space-x-4">
         <NavigationMenu>
-          <NavigationMenuList className="container mx-auto flex justify-between items-center">
-            <div className="text-3xl font-serif mr-2 left-0 hover:text-slate-500 transition-all duration-300 ease-in-out hover:cursor-pointer">
+          <NavigationMenuList className="container mx-auto flex ">
+            <div className=" text-white mx-2">
+              <button onClick={toggleSidebar}>
+                <FaAlignJustify size={20} />
+              </button>
+            </div>
+            <div className="text-2xl font-serif mx-2 left-0 hover:text-slate-500 transition-all duration-300 ease-in-out hover:cursor-pointer">
               <Link href={"/"}>UrbanX</Link>
             </div>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-md text-black space-x-6 p-4">
+              <NavigationMenuTrigger className="text-md text-black space-x-4 p-2">
                 Products
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -143,10 +147,6 @@ const Navbar = () => {
         </NavigationMenu>
       </div>
 
-      {/* second navbar row start */}
-      <div className=" bg-slate-700 p-2">
-        <HamburgerMenu onClick={toggleSidebar} />
-      </div>
       <SideBar sidebarOpen={sidebarOpen} />
     </div>
   );

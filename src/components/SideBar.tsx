@@ -9,7 +9,7 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
     <div>
       <aside
         id="menu"
-        className={`bg-gray-800 text-white h-screen w-64 fixed transform transition-transform ease-in-out ${
+        className={`bg-slate-800 text-white h-screen w-64 fixed transform transition-transform ease-in-out ${
           sidebarOpen ? "-translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -37,13 +37,13 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
           </ul>
         </nav>
       </aside>
-      <main
+      {/* <main
         className={`ml-64 p-8 ${
           sidebarOpen ? "overflow-hidden ml-64" : "ml-8"
         }`}
       >
         <h1 className="text-3xl font-bold mb-4">Main Content</h1>
-      </main>
+      </main> */}
     </div>
   );
 };
