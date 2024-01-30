@@ -48,8 +48,8 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
   );
 };
 
-SideBar.defaultProps = {
-  sidebarOpen: true,
-};
+// SideBar.defaultProps = {
+//   sidebarOpen: true,
+// };
 
 export default SideBar;
