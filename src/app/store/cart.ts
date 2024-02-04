@@ -19,3 +19,5 @@ const useCartStore = create<CartState>()((set) => ({
   increaseProductQuantity: (productId) => set((state) => ({})),
   decreaseProductQuantity: (productId) => set((state) => ({})),
 }));
+
+export default useCartStore;
