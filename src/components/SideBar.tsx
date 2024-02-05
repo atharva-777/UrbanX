@@ -1,10 +1,15 @@
 import React from "react";
+import useSidebarStore from "@/app/store/sidebar";
 
 interface SidebarProps {
   sidebarOpen: boolean;
 }
 
 const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
+  // const {open,toggleSidebar} = useSidebarStore();
+  // if(!open){
+  //   return <div></div>
+  // }
   return (
     <div>
       <aside

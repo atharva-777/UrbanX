@@ -15,12 +15,13 @@ import {
 import React, { useState } from "react";
 import SideBar from "./SideBar";
 import { FaAlignJustify } from "react-icons/fa";
+import useSidebarStore from "@/app/store/sidebar";
 
 const HamburgerMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
     <>
       <button className="relative group" onClick={onClick}>
-        <div className ="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md">
+        <div className="relative flex items-center justify-center rounded-full w-[30px] h-[30px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md">
           <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300  origin-center">
             <div className="bg-white h-[2px] w-1/2 rounded transform transition-all duration-300 group-focus:-rotate-90 group-focus:h-[1px] origin-right delay-75 group-focus:-translate-y-[1px]"></div>
             <div className="bg-white h-[1px] rounded"></div>
@@ -34,14 +35,12 @@ const HamburgerMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 
 const Navbar = () => {
   const { data: session } = useSession();
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const { open, toggleSidebar } = useSidebarStore();
+  
   return (
     <div>
       {/* first navbar row */}
-      <div className="p-2 bg-gray-800 text-white space-x-4">
+      <div className="p-2 bg-gray-800 text-white space-x-4 z-50 fixed">
         <NavigationMenu>
           <NavigationMenuList className="container mx-auto flex ">
             <div className=" text-white mx-2">
@@ -91,7 +90,7 @@ const Navbar = () => {
 
             <NavigationMenuItem>
               <Link href={"/"} legacyBehavior passHref>
-                <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                   Offer Zone
                 </NavigationMenuLink>
               </Link>
@@ -99,7 +98,7 @@ const Navbar = () => {
 
             <NavigationMenuItem>
               <Link href={"/"} legacyBehavior passHref>
-                <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                   Customer Service
                 </NavigationMenuLink>
               </Link>
@@ -119,7 +118,7 @@ const Navbar = () => {
             {session?.user && (
               <NavigationMenuItem>
                 <Link href={"/"} legacyBehavior passHref>
-                  <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                  <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                     User
                   </NavigationMenuLink>
                 </Link>
@@ -129,7 +128,7 @@ const Navbar = () => {
             {!session?.user && (
               <NavigationMenuItem>
                 <Link href={"/api/auth/signin"} legacyBehavior passHref>
-                  <NavigationMenuLink className="text-lg space-x-6 p-4 font-medium">
+                  <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
                     Login
                   </NavigationMenuLink>
                 </Link>
@@ -138,7 +137,7 @@ const Navbar = () => {
 
             <NavigationMenuItem className="right-0 ml-auto">
               <Link href={"/cart"} legacyBehavior passHref>
-                <NavigationMenuLink className="text-lg space-x-6 p-4 right-0 font-medium">
+                <NavigationMenuLink className="text-md space-x-6 p-4 right-0 font-medium">
                   Cart
                 </NavigationMenuLink>
               </Link>
@@ -147,7 +146,7 @@ const Navbar = () => {
         </NavigationMenu>
       </div>
 
-      <SideBar sidebarOpen={sidebarOpen} />
+      <SideBar sidebarOpen={open} />
     </div>
   );
 };
