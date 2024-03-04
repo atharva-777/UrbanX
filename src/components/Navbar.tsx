@@ -36,21 +36,25 @@ const HamburgerMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 const Navbar = () => {
   const { data: session } = useSession();
   const { open, toggleSidebar } = useSidebarStore();
-  
+
   return (
     <div>
       {/* first navbar row */}
-      <div className="p-2 bg-gray-800 text-white space-x-4 z-50 fixed">
+      <div className="p-3 right-0 left-0 top-0 fixed z-50 bg-gray-200">
         <NavigationMenu>
           <NavigationMenuList className="container mx-auto flex ">
-            <div className=" text-white mx-2">
+            <div className=" text-white left-0 mr-3">
               <button onClick={toggleSidebar}>
                 <FaAlignJustify size={20} />
               </button>
             </div>
-            <div className="text-2xl font-serif mx-2 left-0 hover:text-slate-500 transition-all duration-300 ease-in-out hover:cursor-pointer">
-              <Link href={"/"}>UrbanX</Link>
-            </div>
+            <NavigationMenuItem>
+              <Link href={"/"} legacyBehavior passHref>
+                <NavigationMenuLink className="text-2xl font-serif mr-2 hover:text-slate-500 transition-all duration-300 ease-in-out hover:cursor-pointer">
+                  UrbanX
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-md text-black space-x-4 p-2">
                 Products

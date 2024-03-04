@@ -10,7 +10,7 @@ import Offer from "@/components/Offer";
 export default function Home() {
   return (
     <main>
-      <Offer />
+      {/* <Offer /> */}
       <MyCarousel />
       <Category />
     </main>

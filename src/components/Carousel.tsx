@@ -43,19 +43,19 @@ const carouselItems = [
 const MyCarousel = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   return (
-    <div className="flex flex-col justify-between items-center m-4">
+    <div className="flex flex-col justify-between items-center m-4 pt-24">
       <Carousel setApi={setApi} className="w-full max-w-xs">
         <CarouselContent>
           {carouselItems.map((item, index) => (
             <CarouselItem key={index}>
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-4">
-                  <Image src={item.image} alt="" height={200} width={200}/>
+                  <Image src={item.image} alt="" height={200} width={200} />
                 </CardContent>
               </Card>
-      <div className="py-2 text-center text-sm text-muted-foreground">
-        {item.tag}
-      </div>
+              <div className="py-2 text-center text-sm text-muted-foreground">
+                {item.tag}
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
