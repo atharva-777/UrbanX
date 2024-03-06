@@ -14,7 +14,7 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
     <div>
       <aside
         id="menu"
-        className={`bg-slate-800 text-white h-screen w-64 fixed transform transition-transform ease-in-out ${
+        className={`bg-slate-500 text-white h-screen w-64 fixed transform transition-transform ease-in-out ${
           sidebarOpen ? "-translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -24,17 +24,17 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
         <nav>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="block px-4 py-2 text-sm">
+              <a href="#" className="block px-4 py-2 text-xl">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="block px-4 py-2 text-sm">
+              <a href="#" className="block px-4 py-2 text-xl">
                 Products
               </a>
             </li>
             <li>
-              <a href="#" className="block px-4 py-2 text-sm">
+              <a href="#" className="block px-4 py-2 text-xl">
                 About Us
               </a>
             </li>

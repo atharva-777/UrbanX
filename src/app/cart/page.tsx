@@ -1,12 +1,20 @@
+"use client";
 import SideBar from "@/components/SideBar";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 {
   /* <SideBar sidebarOpen={true} /> */
 }
-const page = () => {
+const Cart = () => {
+  const router = useRouter();
+
+  const closePanel = () => {
+    router.push("/");
+  };
+
   return (
     <div>
       <div
@@ -25,14 +33,15 @@ const page = () => {
                   <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                     <div className="flex items-start justify-between">
                       <h2
-                        className="text-lg font-medium text-gray-900"
+                        className="text-lg font-medium text-gray-900 pt-12"
                         id="slide-over-title"
                       >
                         Shopping cart
                       </h2>
-                      <div className="ml-3 flex h-7 items-center">
+                      <div className="ml-3 flex h-7 items-center pt-16">
                         <button
                           type="button"
+                          onClick={closePanel}
                           className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
                         >
                           <span className="absolute -inset-0.5"></span>
@@ -153,18 +162,16 @@ const page = () => {
                       Shipping and taxes calculated at checkout.
                     </p>
                     <div className="mt-6">
-                      <a
-                        href="#"
+                      <Link
+                        href={"/checkout"}
                         className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                       >
                         Checkout
-                      </a>
+                      </Link>
                     </div>
                     <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                       <p>
-                        or <span>
-                          
-                        </span>
+                        or <span></span>
                         <Link
                           href={"/"}
                           className="font-medium text-indigo-600 hover:text-indigo-500"
@@ -185,4 +192,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Cart;
