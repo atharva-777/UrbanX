@@ -43,7 +43,7 @@ const carouselItems = [
 const MyCarousel = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   return (
-    <div className="flex flex-col justify-between items-center m-4 pt-24">
+    <div className="flex flex-col justify-between items-center m-4 pt-8">
       <Carousel setApi={setApi} className="w-full max-w-xs">
         <CarouselContent>
           {carouselItems.map((item, index) => (
