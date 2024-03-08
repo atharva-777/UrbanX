@@ -14,29 +14,29 @@ import Image from "next/image";
 
 const carouselItems = [
   {
-    tag: "SmartWatch",
+    tag: "Jackets",
     image:
-      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942578/UrbanX/daniel-korpai-hbTKIbuMmBI-unsplash_kmeavo.jpg",
+    "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692514037/Metamarket/HomePageUI/c7_zvnwha.jpg",
   },
   {
-    tag: "Thermos",
+    tag: "Denim's",
     image:
-      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942584/UrbanX/joan-tran-reEySFadyJQ-unsplash_bmfn8q.jpg",
+    "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692514043/Metamarket/HomePageUI/j1_wz6otm.jpg",
   },
   {
-    tag: "Headphones",
+    tag: "Stripped Jeans",
     image:
-      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942577/UrbanX/kiran-ck-LSNJ-pltdu8-unsplash_upplnx.jpg",
+    "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692514041/Metamarket/HomePageUI/j3_jpbwlz.jpg",
   },
   {
-    tag: "Nikon 250D Cam",
+    tag: "Sweatshirts",
     image:
-      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942577/UrbanX/varun-gaba-dcgB3CgidlU-unsplash_exbcwg.jpg",
+    "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692422087/Metamarket/d1dcc17602bd460619eb3ecbed0dfa04_uqsnyy.png",
   },
   {
-    tag: "Pepsi 250ml",
+    tag: "Cargo Jeans",
     image:
-      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1705942583/UrbanX/olena-bohovyk-ElfJDs4LAQk-unsplash_klugwi.jpg",
+      "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692514043/Metamarket/HomePageUI/j4_sme50g.jpg",
   },
 ];
 

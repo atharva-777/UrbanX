@@ -74,7 +74,7 @@ const Category = () => {
       <div className="m-6 flex flex-col">
         <div className="text-center space-x-3 space-y-3">
           <p className="text-2xl font-bold">
-            Explore the wide range of products !
+            Explore the wide range of clothing styles !
           </p>
           <p>
             Exclusively available on{" "}

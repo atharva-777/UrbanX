@@ -1,7 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth/next";
-import { NextAuthOptions,getServerSession } from "next-auth";
-
+import { NextAuthOptions, getServerSession } from "next-auth";
 
 const authOptions: NextAuthOptions = {
   providers: [
@@ -15,19 +14,29 @@ const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const user = { id: "42", email: "new@gmail.com", password: "new@123" };
-        JSON.stringify(credentials)
+        const user = {
+          id: "42",
+          name: "Atharva",
+          email: "atharva@gmail.com",
+          password: "new@123",
+          image:
+            "https://res.cloudinary.com/dq4vpg3fh/image/upload/v1692422087/Metamarket/_20230818_23345_sbytkn.png",
+          orderHistory: {
+            count: 5,
+            amount: 25000,
+          },
+        };
+        JSON.stringify(credentials);
         if (
           credentials?.email === user.email &&
           credentials?.password === user.password
         ) {
-          console.log("heree",user)
+          console.log("here", user);
           return user;
         } else {
-          console.log("error")
+          console.log("error");
           return null;
         }
-
       },
     }),
   ],
