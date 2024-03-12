@@ -14,7 +14,7 @@ const SideBar: React.FC<SidebarProps> = ({ sidebarOpen }) => {
     <div>
       <aside
         id="menu"
-        className={`bg-slate-500 text-white h-screen w-64 fixed transform transition-transform ease-in-out ${
+        className={`bg-slate-500 text-white h-screen w-64 fixed transform duration-300 transition-transform ease-in-out ${
           sidebarOpen ? "-translate-x-0" : "-translate-x-full"
         }`}
       >

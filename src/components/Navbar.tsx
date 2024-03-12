@@ -15,6 +15,7 @@ import {
 import React, { useState } from "react";
 import SideBar from "./SideBar";
 import { FaAlignJustify } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
 import useSidebarStore from "@/app/store/sidebar";
 
 const HamburgerMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
@@ -42,7 +43,7 @@ const Navbar = () => {
       {/* first navbar row */}
       <div className="p-3 right-0 left-0 top-0 fixed z-50 bg-gray-200">
         <NavigationMenu>
-          <NavigationMenuList className="container mx-auto flex ">
+          <NavigationMenuList className="container mx-auto flex justify-between items-center space-x-6">
             <div className=" text-white left-0 mr-3">
               <button onClick={toggleSidebar}>
                 <FaAlignJustify size={20} />
@@ -94,6 +95,14 @@ const Navbar = () => {
               </NavigationMenuTrigger>
             </NavigationMenuItem>
 
+            <div>
+              <input
+                type="text"
+                placeholder="Search Iphone 15"
+                className="w-80 h-10 border border-gray-300 rounded-md px-3"
+              />
+            </div>
+
             <NavigationMenuItem>
               <Link href={"/"} legacyBehavior passHref>
                 <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
@@ -110,22 +119,12 @@ const Navbar = () => {
               </Link>
             </NavigationMenuItem>
 
-            <div>
-              <textarea
-                name="Search Products"
-                id=""
-                placeholder="Seach UrbanX"
-                className="rounded border border-zinc-950 p-2"
-                cols={40}
-                rows={1}
-              ></textarea>
-            </div>
-
             {session?.user && (
               <NavigationMenuItem>
                 <Link href={"/"} legacyBehavior passHref>
-                  <NavigationMenuLink className="text-md space-x-6 p-4 font-medium">
-                    User
+                  <NavigationMenuLink className="text-md space-x-6 font-medium">
+                    <CiUser className="ml-4" size={25} />
+                    {/* {session.user.name} */}
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
