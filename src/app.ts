@@ -4,12 +4,14 @@ import cors from "cors";
 import path from "path";
 import bodyParser from "body-parser";
 import { corsOptions } from "./config/corsConfig";
+import { userRouter } from "./routes";
 
 class App {
   public readonly app: Express;
   constructor() {
     this.app = express();
     this.routes();
+    this.app.use("/", userRouter);
     dotenv.config({ path: path.resolve(__dirname, "./.env") });
     this.app.use(bodyParser.json());
     this.app.use(express.json());
