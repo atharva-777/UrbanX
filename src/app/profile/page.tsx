@@ -3,12 +3,18 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import CartService from "../services/cart.service";
 
 const Profile = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
   if (!session) router.push("/");
+
+  const add = async () => {
+    const res = await CartService.addToCart(38, 144, 5);
+    console.log("Response ", res);
+  };
 
   return (
     <div>
@@ -26,6 +32,11 @@ const Profile = () => {
         </div>
         <p className="text-xl font-bold">Welcome, {session?.user?.name}</p>
         <p>{session?.user?.email}</p>
+        <div>
+          <button onClick={add} className="p-4 rounded bg-blue-300">
+            Add To Cart
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -18,6 +18,7 @@ class OrderService {
     const res = api.post("/api/orders/placeOrder", { orderData });
     return res;
   }
+
 }
 
 export default OrderService;
