@@ -12,7 +12,7 @@ const Profile = () => {
   if (!session) router.push("/");
 
   const add = async () => {
-    const res = await CartService.addToCart(38, 144, 5);
+    const res = await CartService.addToCart(6,38, 144, 5);
     console.log("Response ", res);
   };
 
