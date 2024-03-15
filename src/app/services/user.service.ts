@@ -2,6 +2,15 @@ import { NextRequest,NextResponse } from "next/server";
 import { pool } from "@/lib/db";
 
 class UserService {
+
+  static async signUp(name:string,email:string,password:string){
+    try{
+      
+    }catch(err){
+      return NextResponse.json({"error":err});
+    }
+  }
+
   static async createUser(data: any, req: NextRequest, res: NextResponse) {
     const { name, email } = data;
 
