@@ -4,16 +4,17 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import CartService from "../services/cart.service";
+import axios from "axios";
 
 const Profile = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
-  if (!session) router.push("/");
+  // if (!session) router.push("/");
 
   const add = async () => {
-    const res = await CartService.addToCart(6,38, 144, 5);
-    console.log("Response ", res);
+    const res = await axios.get("/api/cart/getCart");
+    console.log("Response ", res.data);
   };
 
   return (

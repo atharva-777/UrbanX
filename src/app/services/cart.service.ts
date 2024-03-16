@@ -1,8 +1,13 @@
 import { api } from "../config/api";
-import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 class CartService {
+
+  static async getCart() {
+    const result = await api.get("/cart");
+    return result.data;
+  }
+  
   static async addToCart(
     uid: number,
     userId: number,
@@ -11,8 +16,12 @@ class CartService {
   ) {
     try {
       console.log("Adding cart requested");
-      // const result = await api.post('/addToCart',{uid,userId,productId,quantity});
-      const result = await axios.post("http://localhost:8000/addToCart",{uid,userId,productId,quantity});
+      const result = await api.post("/addToCart", {
+        uid,
+        userId,
+        productId,
+        quantity,
+      });
       return NextResponse.json({ Result: result.data });
     } catch (err) {
       return NextResponse.json({ error: err });
@@ -30,11 +39,6 @@ class CartService {
 
   static async removeFromCart(userId: number, productId: number) {
     const res = await api.post("/cart/removeFromCart", { userId, productId });
-    return res.data;
-  }
-
-  static async getCart(userId: number) {
-    const res = await api.post("/cart/getCart", { userId });
     return res.data;
   }
 }

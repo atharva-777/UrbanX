@@ -1,6 +1,5 @@
 import { Pool, Client } from "pg";
 const connectionString = process.env.DATABASE_URL;
-import { NextRequest, NextResponse } from "next/server";
 
 const pool = new Pool({
   user: process.env.PGSQL_USER,
@@ -8,9 +7,10 @@ const pool = new Pool({
   password: process.env.PGSQL_PASSWORD,
   database: process.env.PGSQL_DATABASE,
   port: 5432,
+  keepAlive: true,
 });
 
-export {pool};
+export { pool };
 
 // const connect = async () => {
 //   const conn = new Pool({
