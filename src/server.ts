@@ -5,7 +5,7 @@ pool
   .connect()
   .then(async () => {
     console.log("Connected to PostgreSQL database");
-    console.log((await pool.query("SELECT * FROM cart")).rows);
+    console.log((await pool.query("SELECT * FROM users")).rows);
     // await pool.end();
   })
   .catch((err) => {

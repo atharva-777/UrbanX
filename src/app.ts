@@ -4,7 +4,7 @@ import cors from "cors";
 import path from "path";
 import bodyParser from "body-parser";
 import { corsOptions } from "./config/corsConfig";
-import { userRouter } from "./routes";
+import { userRouter,cartRouter } from "./routes";
 
 class App {
   public readonly app: Express;
@@ -12,6 +12,7 @@ class App {
     this.app = express();
     this.routes();
     this.app.use("/", userRouter);
+    this.app.use("/cart",cartRouter);
     dotenv.config({ path: path.resolve(__dirname, "./.env") });
     this.app.use(bodyParser.json());
     this.app.use(express.json());

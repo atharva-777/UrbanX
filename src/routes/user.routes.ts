@@ -1,11 +1,16 @@
 import { Router } from "express";
 import { CartController } from "../controllers";
+import {UserController} from "../controllers";
 
 const userRouter = Router();
 
 userRouter.route("/custom").get((req, res) => {
   res.send("Hello Atharva");
 });
+
+userRouter.route('/login').post(UserController.login);
+
+userRouter.route('/signup').post(UserController.signup);
 
 userRouter.route("/cart").get(CartController.viewCart);
 
